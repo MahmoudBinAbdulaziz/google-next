@@ -45,7 +45,7 @@ function homeSearch() {
       >
         <AiOutlineSearch className="text-xl text-gray-500 mr-3" />
         <input
-          value={searchTerm}
+          // value={searchTerm}
           onChange={(e) => {
             handleSearch(e.target.value);
           }}
