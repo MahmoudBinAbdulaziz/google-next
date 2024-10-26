@@ -5,7 +5,7 @@ import React, { useState } from "react";
 import { AiOutlineSearch } from "react-icons/ai";
 import { BsFillMicFill } from "react-icons/bs";
 import { useDebouncedCallback } from "use-debounce";
-function homeSearch() {
+function HomeSearch() {
   const searchParams = useSearchParams();
   //   const pathname = usePathname();
   const router = useRouter();
@@ -79,4 +79,4 @@ function homeSearch() {
   );
 }
 
-export default homeSearch;
+export default HomeSearch;

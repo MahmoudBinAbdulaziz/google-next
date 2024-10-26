@@ -2,7 +2,7 @@ import React from "react";
 import SearchHeader from "../components/searchHeader";
 import "@/app/globals.css";
 import SearchHeaderOptions from "../components/searchHeaderOptions";
-function layout({ children }) {
+function Layout({ children }) {
   return (
     <>
       <SearchHeader />
@@ -12,4 +12,4 @@ function layout({ children }) {
   );
 }
 
-export default layout;
+export default Layout;
