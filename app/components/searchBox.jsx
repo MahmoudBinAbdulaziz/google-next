@@ -11,8 +11,7 @@ function SearchBox() {
   let searchTerm = searchParams.get("searchTerm");
   if (!searchTerm) searchTerm = "";
   const [term, setTerm] = useState(searchTerm);
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const handleSubmit = () => {
     const params = new URLSearchParams(searchParams);
     if (term) {
       params.set("searchTerm", term);
@@ -22,21 +21,21 @@ function SearchBox() {
     }
     router.push(`web?searchTerm=${term}`);
   };
-  const handleSearch = useDebouncedCallback((input) => {
-    setTerm(input);
-  }, 500);
   return (
     <form
-      onSubmit={handleSubmit}
+      onSubmit={(e) => {
+        e.preventDefault();
+        handleSubmit();
+      }}
       className="flex border border-gray-200 rounded-full shadow-lg px-6 py-3 ml-10 mr-5 flex-grow max-w-3xl items-center"
     >
       <input
         type="text"
-        defaultValue={term}
+        // defaultValue={term}
         className="w-full focus:outline-none"
-        // value={term}
+        value={term}
         onChange={(e) => {
-          handleSearch(e.target.value);
+          setTerm(e.target.value);
         }}
       />
       <RxCross2
