@@ -11,7 +11,7 @@ export default function SearchHeaderOptions() {
   const pathname = usePathname();
 
   const selectTab = (tab) => {
-    console.log(searchTerm);
+    // console.log(searchTerm);
     if (!searchTerm) {
       router.push(
         `/search/${tab === "Images" ? "image" : "web"}

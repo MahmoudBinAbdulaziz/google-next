@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import WebSearchResults from "@/app/components/webSearchResults";
 export default async function Page(context) {
   const { searchParams } = await context; // Await the context to access searchParams
   const word = await searchParams;
@@ -30,11 +31,5 @@ export default async function Page(context) {
       </div>
     );
   }
-  return (
-    <>
-      {results?.map((item, index) => {
-        return <h1 key={index}>{item.title}</h1>;
-      })}
-    </>
-  );
+  return <div>{results && <WebSearchResults results={data} />}</div>;
 }
