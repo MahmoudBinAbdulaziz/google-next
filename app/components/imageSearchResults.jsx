@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense } from "react";
 import Link from "next/link";
 import PaginationButtons from "./paginationButtons";
 function ImageSearchResults({ results }) {
@@ -30,7 +30,9 @@ function ImageSearchResults({ results }) {
         ))}
       </div>
       <div className="ml-16">
-        <PaginationButtons />
+        <Suspense>
+          <PaginationButtons />
+        </Suspense>
       </div>
     </div>
   );

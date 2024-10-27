@@ -1,6 +1,7 @@
 import Image from "next/image";
 import HomeHeader from "@/app/components/homeHeader";
 import HomeSearch from "./components/homeSearch";
+import { Suspense } from "react";
 // import  google  from "@/public/images/google.png";
 export default function Home() {
   return (
@@ -19,7 +20,9 @@ export default function Home() {
             width: "auto",
           }}
         />
-        <HomeSearch />
+        <Suspense>
+          <HomeSearch />
+        </Suspense>
       </div>
     </>
   );

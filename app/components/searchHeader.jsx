@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense } from "react";
 import Image from "next/image";
 import Link from "next/link";
 // import SearchBox from "./SearchBox";
@@ -20,7 +20,9 @@ function SearchHeader() {
             style={{ width: "auto" }}
           />
         </Link>
-        <SearchBox />
+        <Suspense>
+          <SearchBox />
+        </Suspense>
         <div className="flex-1">{/* <SearchBox /> */}</div>
         <div className="hidden md:inline-flex space-x-2">
           <RiSettings3Line className="bg-transparent hover:bg-gray-200 p-2 text-4xl rounded-full cursor-pointer" />
@@ -30,7 +32,9 @@ function SearchHeader() {
           Sign in
         </button>
       </div>
-      <SearchHeaderOptions />
+      <Suspense>
+        <SearchHeaderOptions />
+      </Suspense>
     </header>
   );
 }
